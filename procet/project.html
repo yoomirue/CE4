@@ -8,24 +8,32 @@
     <script src="./project.js" ></script>
 </head>
 <body>
-    <h1>랜덤 뽑기 사이트</h1>
+    <h1 id="title">랜덤 뽑기 사이트</h1>
+    <h3 id="left"></h3>
     
     <h2 id="target"></h2>
-    <img id="img1" src="https://cdn.pixabay.com/photo/2015/11/02/15/00/box-1018503_960_720.png" alt="box">
-    <img id="img2" src="https://cdn.pixabay.com/photo/2015/11/02/15/00/box-1018503_960_720.png" alt="box">
-    <img id="img3" src="https://cdn.pixabay.com/photo/2015/11/02/15/00/box-1018503_960_720.png" alt="box">
-    <img id="img4" src="https://cdn.pixabay.com/photo/2015/11/02/15/00/box-1018503_960_720.png" alt="box">
-    <img id="img5" src="https://cdn.pixabay.com/photo/2015/11/02/15/00/box-1018503_960_720.png" alt="box">
+    <img class="box" id="img1" src="https://cdn.pixabay.com/photo/2015/11/02/15/00/box-1018503_960_720.png" alt="box">
+    <img class="box" id="img2" src="https://cdn.pixabay.com/photo/2015/11/02/15/00/box-1018503_960_720.png" alt="box">
+    <img class="box" id="img3" src="https://cdn.pixabay.com/photo/2015/11/02/15/00/box-1018503_960_720.png" alt="box">
+    <img class="box" id="img4" src="https://cdn.pixabay.com/photo/2015/11/02/15/00/box-1018503_960_720.png" alt="box">
+    <img class="box" id="img5" src="https://cdn.pixabay.com/photo/2015/11/02/15/00/box-1018503_960_720.png" alt="box">
 
 
 
-    <h4>기본금 : 10000원(<b>만원</b>)</h4>
+    <h4>기본금 : 30000원(<b>3만원</b>)</h4>
     <h4 id="sang">상자를 한번 열때 5000원이 빠집니다</h4>
-    <h4>확률</h4>
-    <h4>2배 = </h4>
-    <h4>3배 = </h4>
-    <h4>50%절감 = </h4>
-    <h4>10%추가 = </h4>
-    <h4>꽝 = </h4>
+    <button onclick="reset();">재구성</button>
+    <br><br>
+    <button onclick="window.location.reload();">새로고침</button>
+    <br><br>
+    <h1 id="information">재구성 버튼을 누르면 돈이 저장된 상태로 되돌아갑니다!</h1>
+    <h3 id="important">일반 새로고침 F5를 누르거나 돈이 탕진되어서 새로고침 되면 아예 처음으로 되돌아갑니다</h3>
+    <br><br><br><br><br><br>
+    <img id="store1" src="https://cdn-icons-png.flaticon.com/512/3773/3773845.png" alt="cctv">
+    <img id="store2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvVR-N1g1dGWLY0sgwQMyxw8vxD1ItSSIhtrQR1-shqg&s" alt="add chance">
+    <br>
+    <button>2배 아이템 훔쳐보기</button>
+    &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; 
+    <button onclick="storeitem2();">횟수 1번 늘리기 3만원</button>
 </body>
 </html>
