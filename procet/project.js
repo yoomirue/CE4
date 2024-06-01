@@ -1,8 +1,40 @@
-var gibon = 300001;
+var gibon = 500000;
 var isopen = [false, false, false, false, false];
 
 var cnt = 2;
+function nowtier() {
+  const target = document.querySelector("h2#tier");
 
+  target.innerHTML = "현재 당신의 티어" + " : " + "아이언";
+}
+function tier2() {
+  if (gibon < 100001){
+    alert("돈이 부족합니다 \n(10만원일 떄도 작동합니다.)");
+  }
+  else{
+  gibon -= 100000;
+  const target = document.querySelector("h2#tier");
+
+  target.innerHTML = "현재 당신의 티어" + " : " + "브론즈";
+  target.style.color = "brown" ;
+  setmoney();
+  leftchance();
+  }
+}
+function tier3() {
+  if (gibon < 300001){
+    alert("돈이 부족합니다 \n(10만원일 떄도 작동합니다.)");
+  }
+  else{
+  gibon -= 300000;
+  const target = document.querySelector("h2#tier");
+
+  target.innerHTML = "현재 당신의 티어" + " : " + "실버";
+  target.style.color = "lightgray" ;
+  setmoney();
+  leftchance();
+  }
+}
 function setmoney() {
   const target = document.querySelector("h2#target");
 
@@ -72,7 +104,7 @@ function getrandomnum() {
 }
 
 function storeitem2() {
-  if (gibon <= 30001) {
+  if (gibon < 30001) {
     alert("돈이 부족합니다! 더 모아오세요\n(딱 30000원 일때도 작동 안됩니다)");
   } else {
     gibon -= 30000;
@@ -82,6 +114,43 @@ function storeitem2() {
   }
 }
 
+function storeitem() {
+  if (gibon < 50001){
+    alert("돈이 부족합니다! 더 모아오세요\n(딱 50000원 일때도 작동 안됩니다");
+  }
+  gibon -= 50000;
+
+  let images = document.querySelectorAll("img.box");
+
+  images[num1].setAttribute(
+    "src",
+    "https://cdn-icons-png.flaticon.com/512/7946/7946019.png"
+  );
+  images[num2].setAttribute(
+    "src",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCuPR4r3m-ctKuzvAd9_-XU9XU_mQ0ti_WI9mDZjlYMA&s"
+  );
+  cnt = 0;
+  setTimeout(function() {  
+    images[num1].setAttribute(
+      "src",
+      "https://cdn.pixabay.com/photo/2015/11/02/15/00/box-1018503_960_720.png"
+    );
+    images[num2].setAttribute(
+      "src",
+      "https://cdn.pixabay.com/photo/2015/11/02/15/00/box-1018503_960_720.png"
+    );
+    cnt = 2;
+  }, 2000);
+
+
+  
+  
+
+  setmoney();
+  leftchance();
+
+}
 function reset() {
   // https://cdn.pixabay.com/photo/2015/11/02/15/00/box-1018503_960_720.png
   let images = document.querySelectorAll("img.box");
@@ -98,9 +167,16 @@ function reset() {
   num2 = getrandomnum();
   setmoney();
   leftchance();
+  nowtier();
 }
 
 document.addEventListener("DOMContentLoaded", function () {
   clickImage();
   reset();
 });
+
+function sm() {
+  gibon = 50000;
+  reset();
+  
+}

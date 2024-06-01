@@ -13,6 +13,9 @@ img {
 .sang{
     color: red;
 }
+#tier {
+    color: gray;
+}
 #information {
     display: block;
     text-align: center;
