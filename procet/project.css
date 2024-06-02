@@ -3,7 +3,22 @@
     text-align: center;
     align-content: center;
     font-style: italic;
-    color: red;
+    font-size: 40px;
+    font-weight: bold;
+    background: linear-gradient(
+        to right,
+        red,
+        orange,
+        yellow,
+        lightgreen,
+        green,
+        lightblue,
+        skyblue,
+        blue,
+        indigo,
+        purple,
+        violet
+    )
 }
 img { 
     width: 300px;
@@ -22,9 +37,28 @@ img {
     align-content: center;
     color: green;
 }
+#tiersave {
+    display: block;
+    text-align: center;
+    align-content: center;
+    color: lightgreen;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
 #important {
     display: block;
     text-align: center;
     align-content: center;
     color: darkblue;
+    
+    
+}
+#basictier {
+    width: 100px;
+    height: 100px;
+}
+
+#store1, #store2 ,#store3,#store4,#store5, #store6, #store7, #store8, #store9, #store10 {
+    width: 200px;
+    height: 200px;
 }

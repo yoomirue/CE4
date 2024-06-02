@@ -1,4 +1,4 @@
-var gibon = 500000;
+var gibon = 50000;
 var isopen = [false, false, false, false, false];
 
 var cnt = 2;
@@ -17,13 +17,16 @@ function tier2() {
 
   target.innerHTML = "현재 당신의 티어" + " : " + "브론즈";
   target.style.color = "brown" ;
+  const tier = document.querySelector("#basictier");
+
+  tier.setAttribute("src", "https://i.namu.wiki/i/Jdc_mVeVM9WVBKCV3A5CYFN3Ss-hbpCBW6OOC8ml33d-bI1dGtPPCN0WAEP1wH9WaVT9U--u7Isay1TGmf4Ftg.webp")
   setmoney();
   leftchance();
   }
 }
 function tier3() {
   if (gibon < 300001){
-    alert("돈이 부족합니다 \n(10만원일 떄도 작동합니다.)");
+    alert("돈이 부족합니다 \n(30만원일 떄도 작동합니다.)");
   }
   else{
   gibon -= 300000;
@@ -31,6 +34,113 @@ function tier3() {
 
   target.innerHTML = "현재 당신의 티어" + " : " + "실버";
   target.style.color = "lightgray" ;
+  const tier = document.querySelector("#basictier");
+
+  tier.setAttribute("src", "https://i.namu.wiki/i/brsYYkyP4XAm-Gx7e_gbal5eMsvAnsRB38sTO1JIepSXF0tIldD60E570Zop2IVs2-_BUUwQl1ijoNL1N-M3lA.webp")
+  setmoney();
+  leftchance();
+  }
+}
+function tier4() {
+  if (gibon < 700001){
+    alert("돈이 부족합니다 \n(70만원일 떄도 작동합니다.)");
+  }
+  else{
+  gibon -= 700000;
+  const target = document.querySelector("h2#tier");
+
+  target.innerHTML = "현재 당신의 티어" + " : " + "골드";
+  target.style.color = "yellow" ;
+  target.style.webkitTextStroke = "1px black";
+
+  const tier = document.querySelector("#basictier");
+
+  tier.setAttribute("src", "https://i.namu.wiki/i/_U6NDRSwxfC_QD4pglomFcU2jdHC-LatFe82BciRJUXY8teLazyiipl0RBYoq0fRxIgXNlqys1nl94F67i8JIg.webp")
+  setmoney();
+  leftchance();
+  }
+}
+function tier5() {
+  if (gibon < 1500001){
+    alert("돈이 부족합니다 \n(70만원일 떄도 작동합니다.)");
+  }
+  else{
+  gibon -= 1500000;
+  const target = document.querySelector("h2#tier");
+
+  target.innerHTML = "현재 당신의 티어" + " : " + "플레";
+  target.style.color = "skyblue" ;
+  const tier = document.querySelector("#basictier");
+
+  tier.setAttribute("src", "https://i.namu.wiki/i/SyhhVDi0nCg0lorF8HfS_nFMgXFBy02ZRTBX9jM2wPOotjgwkHd14fdlBd6WbjdgsDQ9SpQnNFpocKj0r-DJ2w.webp")
+  setmoney();
+  leftchance();
+  }
+}
+function tier6() {
+  if (gibon < 3000001){
+    alert("돈이 부족합니다 \n300만원일 떄도 작동합니다.)");
+  }
+  else{
+  gibon -= 3000000;
+  const target = document.querySelector("h2#tier");
+
+  target.innerHTML = "현재 당신의 티어" + " : " + "다이아";
+  target.style.color = "purple" ;
+  const tier = document.querySelector("#basictier");
+
+  tier.setAttribute("src", "https://i.namu.wiki/i/b2En01b9RIufl5PPzDb4LAtlcdkxWGICfYfhD0f8qYgWPXKi2LDfb4Efha0jW0e-myY_JVPsq0tmw44zkh-kpw.webp")
+  setmoney();
+  leftchance();
+  }
+}
+function tier7() {
+  if (gibon < 9000001){
+    alert("돈이 부족합니다 \n900만원일 떄도 작동합니다.)");
+  }
+  else{
+  gibon -= 9000000;
+  const target = document.querySelector("h2#tier");
+
+  target.innerHTML = "현재 당신의 티어" + " : " + "초월자";
+  target.style.color = "lightgreen" ;
+  const tier = document.querySelector("#basictier");
+
+  tier.setAttribute("src", "https://i.namu.wiki/i/wfLry9aPlJ9JieBGa7ZiyiOMGa6jRf_pOYQtE4GDqhBctzUtj36ZakUugXlvwIaw1VDDlaMW6lf2G-QT3Ir39g.webp")
+  setmoney();
+  leftchance();
+  }
+}
+function tier8() {
+  if (gibon < 40000001){
+    alert("돈이 부족합니다 \n4000만원일 떄도 작동합니다.)");
+  }
+  else{
+  gibon -= 40000000;
+  const target = document.querySelector("h2#tier");
+
+  target.innerHTML = "현재 당신의 티어" + " : " + "불멸";
+  target.style.color = "rgb(204, 50, 50)" ;
+  const tier = document.querySelector("#basictier");
+
+  tier.setAttribute("src", "https://i.namu.wiki/i/mlmxRXwNvk1dbrUNj2DzoIBJc1vx2A8faG9-MQhTNiMKSIGQ5q3nIt34nvNio3Kmc_DssfOqESyZfQfmAI7zig.webp")
+  setmoney();
+  leftchance();
+  }
+}
+function tier9() {
+  if (gibon < 1000000001){
+    alert("돈이 부족합니다 \n4000만원일 떄도 작동합니다.)");
+  }
+  else{
+  gibon -= 100000000;
+  const target = document.querySelector("h2#tier");
+
+  target.innerHTML = "현재 당신의 티어" + " : " + "아티팩트";
+  target.style.color = "rgb(166, 255, 0)" ;
+  const tier = document.querySelector("#basictier");
+
+  tier.setAttribute("src", "https://i.namu.wiki/i/2VSxw0SKGMTj86ACwvjj8I7yAmzCU8VkF-4RR8HNh7Ggs8eIKldeCP1GCFoWh_3ct6ZjRCEDhy2OFOgE71TA1Q.webp")
   setmoney();
   leftchance();
   }
