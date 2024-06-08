@@ -130,7 +130,7 @@ function tier8() {
 }
 function tier9() {
   if (gibon < 1000000001){
-    alert("돈이 부족합니다 \n4000만원일 떄도 작동합니다.)");
+    alert("돈이 부족합니다 \n10억일 떄도 작동합니다.)");
   }
   else{
   gibon -= 100000000;
@@ -212,6 +212,9 @@ function getrandomnum() {
   }
   return randomnumber;
 }
+function getrandomnum2() {
+  let randomnumber2 = Math.floor(Math.random() * 99);
+}
 
 function storeitem2() {
   if (gibon < 30001) {
@@ -288,5 +291,4 @@ document.addEventListener("DOMContentLoaded", function () {
 function sm() {
   gibon = 50000;
   reset();
-  
 }
