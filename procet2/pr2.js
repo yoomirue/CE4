@@ -1,7 +1,10 @@
 bananastock = 329;
+applestock = 6300;
 soudon = 1000;
 soubananastock = 0;
 bananazehan = 10;
+souapplestock = 0;
+
 
 function getrandomnum() {
     let randomnumber = Math.floor(Math.random() * 301) -101;
@@ -20,13 +23,22 @@ function soudonlive() {
 }
 
 
-function rdc() {
+function aaa() {
     const target = document.querySelector("h3#bananaboxfont");
     const value = getrandomnum();
     target.innerHTML = "버내너 주식" + " : " + value + "%";
     const target2 = document.querySelector("h3#bananaboxfont2");
     nowbananstock = Math.floor(bananastock * value / 100);
     target2.innerHTML = "현재 가격" + " : " + nowbananstock + "원";
+}
+
+function aab() {
+    const target = document.querySelector("h3#appleboxfont");
+    const value = getrandomnum();
+    target.innerHTML = "솨가 주식" + " : " + value + "%";
+    const target2 = document.querySelector("h3#appleboxfont2");
+    nowapplestock = Math.floor(applestock * value / 100);
+    target2.innerHTML = "현재 가격" + " : " + nowapplestock + "원";
 }
 
 function soubananastocklive() {
@@ -69,5 +81,5 @@ function addbananastockcount() {
     }
     
 }
-setInterval(() => {rdc();}, 3000);
+setInterval(() => {aaa(); aab();}, 3000);
 setInterval(() => {soudonlive();}, 1)
