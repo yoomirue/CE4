@@ -42,3 +42,8 @@
     border: 3px solid black;
     text-align: center;
 }
+
+#pluscount {
+    width: 200px;
+    height: 200px;
+}

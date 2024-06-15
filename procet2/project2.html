@@ -4,32 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>주식 시뮬레이터</title>
-    <link rel="stylesheet" href="project2.css">
-    <script src="./project2.js"></script>
+    <link rel="stylesheet" href="pr2.css">
+    <script src="./pr2.js"></script>
 </head>
 <body>
     <h1 id="title">주식 시뮬레이터</h1>
+    <h1 id="soudon">현재 소유 금액 : 1000원</h1>
     <br><br><br><br>
     <h2>오늘의 주식 상품</h2>
     <div style="display: inline-block;">
         <img id="stock1" src="https://littledeep.com/wp-content/uploads/2020/01/littledeep_illustration_banana_style1.png" alt="bananastock">
-        <h3 id="bananaboxfont">버내너 주식 0%</h3>
+        <h3 id="bananaboxfont">버내너 주식 : 0%</h3>
+        <h4>기본 가격 : 329원</h4>
+        <h3 id="bananaboxfont2">현재 가격 : 329원;</h3>
+        <h4 id="bananastocksou">현재 주식 소유 수 : 0개</h4>
+        <button onclick="soubananastocklive();">매수</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button onclick="soubananastocklive2();">매도</button>
     </div>
     <div style="display: inline-block;">
         <img id="stock2" src="https://img.freepik.com/premium-vector/ladder-illustrated_592324-7884.jpg" alt="ladder">
         <h3 id="ladderboxfont">사다리 주식 0%</h3>
+        <button>매수</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button>매도</button>
     </div>
     <div style="display: inline-block;">
         <img id="stock3" src="https://www.logoyogo.com/web/wp-content/uploads/edd/2023/04/logoyogo-1-24.jpg" alt="watermellon">
         <h3 id="watermellonboxfont">수박 주식 0%</h3>
+        <button>매수</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button>매도</button>
     </div>
     <div style="display: inline-block;">
         <img id="stock4"src="https://p.turbosquid.com/ts-thumb/Id/pUf1GQ/c3/ts/jpg/1638912981/600x600/fit_q87/12eacc2a559d4cc56cc4c0b69e03f8b3393b3083/ts.jpg" alt="minecraftsoil">
         <h3 id="soilboxfont">흙 블록 주식 0%</h3>
+        <button>매수</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button>매도</button>
     </div>
     <div style="display: inline-block;">
         <img id="stock5"src="https://img.freepik.com/premium-vector/magnifying-glass-illustration_91756-692.jpg" alt="readingglasses">
         <h3 id="rlboxfont">돋보기 주식 0%</h3>
+        <button>매수</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button>매도</button>
+    </div>
+    <br><br><br><br><br><br>
+    <div style="display: inline-block;">
+        <img id="pluscount" src="https://t3.ftcdn.net/jpg/05/24/69/34/360_F_524693486_zYHGAZFm1VYUVgkMuDVrPEHqGAze03DW.jpg" alt="pluscount">
+        <h3>가격 10000원</h3>
+        <button onclick="addbananastockcount();">버내너 주식 한도 추가</button>
     </div>
 </body>
 </html>
