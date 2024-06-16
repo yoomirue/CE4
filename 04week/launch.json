@@ -7,8 +7,9 @@
         {
             "type": "chrome",
             "request": "launch",
-            "name": "Open 04.html",
-            "file": "c:\\Users\\Administrator\\Desktop\\주말반 수업자료\\최은\\새 폴더\\웹\\04.html"
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}"
         }
     ]
 }
