@@ -25,7 +25,7 @@
     text-align: center;
 }
 
-#watermellonboxfont {
+#wattermellonboxfont {
     display: block;
     border: 3px solid black;
     text-align: center;
@@ -43,7 +43,8 @@
     text-align: center;
 }
 
-#pluscount {
+#pluscount, #pluscount2, #pluscount3 {
     width: 200px;
     height: 200px;
 }
+
