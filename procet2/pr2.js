@@ -1,7 +1,8 @@
 bananastock = 329;
 applestock = 6300;
 wattermellonstock = 2620;
-soudon = 1000;
+soilstock = 30000;
+soudon = 1000;  
 
 soubananastock = 0;
 bananazehan = 10;
@@ -12,6 +13,9 @@ applezehan = 5;
 souwattermellonstock =0;
 wattermellonzehan = 20;
 
+
+sousoilstock = 0;
+soilzehan = 5;
 
 function getrandomnum() {
     let randomnumber = Math.floor(Math.random() * 201) -101;
@@ -74,6 +78,22 @@ function aac() {
     nowwattermellonstock = Math.floor(wattermellonstock + (wattermellonstock * value / 100));
     target2.innerHTML = "현재 가격" + " : " + nowwattermellonstock + "원";
 }
+
+function aad() {
+    const target = document.querySelector("h3#soilboxfont");
+    const value = getrandomnum();
+    if (value > 0){
+        document.getElementById('soilboxfont').style.borderColor="red";
+    }
+    else{
+        document.getElementById('soilboxfont').style.borderColor="blue";
+    }
+    target.innerHTML = "훍 주식" + " : " + value + "%";
+    const target2 = document.querySelector("h3#soilboxfont2");
+    nowsoilstock = Math.floor(soilstock + (soilstock * value / 100));
+    target2.innerHTML = "현재 가격" + " : " + nowsoilstock + "원";
+}
+
 function soubananastocklive() {
     if (soudon < nowbananstock){
         alert("현재 소유하신 돈이 버내너 주식을 살만큼 충분하지 않습니다!");
@@ -171,6 +191,38 @@ function souwattermellonstocklive2() {
     
 }
 
+function sousoilstocklive() {
+    if (soudon < nowsoilstock){
+        alert("현재 소유하신 돈이 수봑 주식을 살만큼 충분하지 않습니다!");
+    }
+    else{
+        soudon -= nowsoilstock;
+        if(sousoilstock >= soilzehan){
+            alert("더 이상 살 수 없습니다");
+        }
+        else{
+            sousoilstock += 1;
+            const target = document.querySelector("h4#soilstocksou");
+            target.innerHTML = "현재 주식 소유 수" +" : " + sousoilstock + "개";
+        }
+        soudonlive();
+    }
+}
+
+function sousoilstocklive2() {
+    if (sousoilstock <= 0){
+        alert("가지고 있는 주식이 수봑 주식이 없습니다!");
+    }
+    else{
+        soudon += nowsoilstock;
+        sousoilstock -= 1;
+        const target = document.querySelector("h4#soilstocksou");
+        target.innerHTML = "현재 주식 소유 수" +" : " + sousoilstock + "개";
+        soudonlive();
+    }
+    
+}
+
 
 function addbananastockcount() {
     if (soudon < 100000){
@@ -201,5 +253,15 @@ function addwattermellonstockcount() {
     }
     
 }
-setInterval(() => {aaa(); aab(); aac();}, 3000);
+
+function addsoilstockcount() {
+    if (soudon < 200000){
+        alert("돈이 부족합니다!");
+    }
+    else{
+        soilzehan += 1;
+    }
+    
+}
+setInterval(() => {aaa(); aab(); aac(); aad();}, 3000);
 // setInterval(() => {soudonlive();}, 1)
