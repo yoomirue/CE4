@@ -18,8 +18,7 @@ sousoilstock = 0;
 soilzehan = 5;
 
 function getrandomnum() {
-    // let randomnumber = Math.floor(Math.random() * 201) -101;
-    let randomnumber = -101;
+    let randomnumber = Math.floor(Math.random() * 201) -101;
     if (randomnumber == -101) {
         function rdc2() {
             const target = document.querySelector( "h3#bananaboxfont");
