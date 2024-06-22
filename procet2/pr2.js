@@ -18,8 +18,9 @@ sousoilstock = 0;
 soilzehan = 5;
 
 function getrandomnum() {
-    let randomnumber = Math.floor(Math.random() * 201) -101;
-    while (randomnumber == -100) {
+    // let randomnumber = Math.floor(Math.random() * 201) -101;
+    let randomnumber = -101;
+    if (randomnumber == -101) {
         function rdc2() {
             const target = document.querySelector( "h3#bananaboxfont");
             target.innerHTML = "상장 폐지";
@@ -225,7 +226,7 @@ function sousoilstocklive2() {
 
 
 function addbananastockcount() {
-    if (soudon < 100000){
+    if (soudon < 10000){
         alert("돈이 부족합니다!");
     }
     else{
