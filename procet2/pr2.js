@@ -1,11 +1,11 @@
-bananastock = 329;
+soilstock = 30000;
+woodstock = 329;
 applestock = 6300;
 wattermellonstock = 2620;
-soilstock = 30000;
 soudon = 1000;  
 
-soubananastock = 0;
-bananazehan = 10;
+souwoodstock = 0;
+woodzehan = 10;
 
 souapplestock = 0;
 applezehan = 5;
@@ -19,12 +19,6 @@ soilzehan = 5;
 
 function getrandomnum() {
     let randomnumber = Math.floor(Math.random() * 201) -101;
-    if (randomnumber == -101) {
-        function rdc2() {
-            const target = document.querySelector( "h3#bananaboxfont");
-            target.innerHTML = "상장 폐지";
-        }
-    }
     return randomnumber;
 }
 
@@ -35,17 +29,17 @@ function soudonlive() {
 
 
 function aaa() {
-    const target = document.querySelector("h3#bananaboxfont");
+    const target = document.querySelector("h3#woodboxfont");
     const value = getrandomnum();
     if (value > 0){
-        document.getElementById('bananaboxfont').style.borderColor="red";
+        document.getElementById('woodboxfont').style.borderColor="red";
     }
     else{
-        document.getElementById('bananaboxfont').style.borderColor="blue";
+        document.getElementById('woodboxfont').style.borderColor="blue";
     }
-    target.innerHTML = "버내너 주식" + " : " + value + "%";
-    const target2 = document.querySelector("h3#bananaboxfont2");
-    nowbananstock = Math.floor(bananastock + (bananastock * value / 100));
+    target.innerHTML = "나무 주식" + " : " + value + "%";
+    const target2 = document.querySelector("h3#woodboxfont2");
+    nowbananstock = Math.floor(woodstock + (woodstock * value / 100));
     target2.innerHTML = "현재 가격" + " : " + nowbananstock + "원";
 }
 
@@ -94,34 +88,34 @@ function aad() {
     target2.innerHTML = "현재 가격" + " : " + nowsoilstock + "원";
 }
 
-function soubananastocklive() {
+function souwoodstocklive() {
     if (soudon < nowbananstock){
         alert("현재 소유하신 돈이 버내너 주식을 살만큼 충분하지 않습니다!");
     }
     else{
         soudon -= nowbananstock;
-        if(soubananastock >= bananazehan){
+        if(souwoodstock >= woodzehan){
             alert("더 이상 살 수 없습니다");
         }
         else{
-            soubananastock += 1;
-            const target = document.querySelector("h4#bananastocksou");
-            target.innerHTML = "현재 주식 소유 수" +" : " + soubananastock + "개";
+            souwoodstock += 1;
+            const target = document.querySelector("h4#woodstocksou");
+            target.innerHTML = "현재 주식 소유 수" +" : " + souwoodstock + "개";
             
         }
         soudonlive();
     }
 }
 
-function soubananastocklive2() {
-    if (soubananastock <= 0){
+function souwoodstocklive2() {
+    if (souwoodstock <= 0){
         alert("가지고 있는 주식이 버내너 주식이 없습니다!");
     }
     else{
         soudon += nowbananstock;
-        soubananastock -= 1;
-        const target = document.querySelector("h4#bananastocksou");
-        target.innerHTML = "현재 주식 소유 수" +" : " + soubananastock + "개";
+        souwoodstock -= 1;
+        const target = document.querySelector("h4#woodstocksou");
+        target.innerHTML = "현재 주식 소유 수" +" : " + souwoodstock + "개";
         soudonlive();
     }
     
@@ -224,12 +218,12 @@ function sousoilstocklive2() {
 }
 
 
-function addbananastockcount() {
+function addwoodstockcount() {
     if (soudon < 10000){
         alert("돈이 부족합니다!");
     }
     else{
-        bananazehan += 1;
+        woodzehan += 1;
     }
     
 }
