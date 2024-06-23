@@ -15,8 +15,8 @@
     <div style="display: inline-block;">
         <img id="stock1"src="https://mblogthumb-phinf.pstatic.net/MjAyMDA4MTNfMTA2/MDAxNTk3MzA4MDY4MDg5.Yi9wc8Z_VWrjHW5WaYOGsVal9g9-0YuMD5iQeI7pt00g.QZMRCtBxLdav9-Nj4uD5Aqo_MWVvv8Kn41SrRNUg0SAg.PNG.creepersun3695/7.png?type=w800" alt="minecraftsoil">
         <h3 id="soilboxfont">훍 주식 0%</h3>
-        <h4>기본 가격 : 30000원</h4>
-        <h3 id="soilboxfont2">현재 가격 : 30000원</h3>
+        <h4>기본 가격 : 500원</h4>
+        <h3 id="soilboxfont2">현재 가격 : 500원</h3>
         <h4 id="soilstocksou">현재 주식 소유 수 : 0개</h4>
         <button onclick="sousoilstocklive();">매수</button>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -24,23 +24,23 @@
     </div>
     <div style="display: inline-block;">
         <img id="stock2" src="https://i.namu.wiki/i/mq36amr0icj09qnFHI2SnNbfljSUwna_H36crsvM0kXIqgsxiEoQiiNLmmoDn83IqSfYbXf6bQAHIHF_mObOzw.webp" alt="woodstock">
-        <h3 id="woodboxfont">나무 주식 : 0%</h3>
-        <h4>기본 가격 : 329원</h4>
-        <h3 id="woodboxfont2">현재 가격 : 329원</h3>
+        <h3 id="woodboxfont">놔무 주식 : 0%</h3>
+        <h4>기본 가격 : 1000</h4>
+        <h3 id="woodboxfont2">현재 가격 : 1000원</h3>
         <h4 id="woodstocksou">현재 주식 소유 수 : 0개</h4>
         <button onclick="souwoodstocklive();">매수</button>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <button onclick="souwoodstocklive2();">매도</button>
     </div>
     <div style="display: inline-block;">
-        <img id="stock3" src="https://i.namu.wiki/i/fqRz2te3RqLiATVj6mPTmyA_Z7nL1Gm0p2DOtjRdLix9SRkaxRdHOUsbVIwLycVkq6vXMAtWmN1SUHmmqZATLg.png" alt="apple">
-        <h3 id="appleboxfont">사과 주식 0%</h3>
-        <h4>기본 가격 : 6300원</h4>
-        <h3 id="appleboxfont2">현재 가격 : 6300원</h3>
-        <h4 id="applestocksou">현재 주식 소유 수 : 0개</h4>
-        <button onclick="souapplestocklive();">매수</button>
+        <img id="stock3" src="https://static.wikia.nocookie.net/minecraft_ko_gamepedia/images/d/d4/Stone.png/revision/latest?cb=20190506032707" alt="stone">
+        <h3 id="stoneboxfont">똘 주식 0%</h3>
+        <h4>기본 가격 : 2000원</h4>
+        <h3 id="stoneboxfont2">현재 가격 : 2000원</h3>
+        <h4 id="stonestocksou">현재 주식 소유 수 : 0개</h4>
+        <button onclick="soustonestocklive();">매수</button>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <button onclick="souapplestocklive2();">매도</button>
+        <button onclick="soustonestocklive2();">매도</button>
     </div>
     <div style="display: inline-block;">
         <img id="stock4" src="https://static.wikia.nocookie.net/minecraft_ko_gamepedia/images/a/af/Melon_Slice.png/revision/latest?cb=20190404161004" alt="wattermellon">
@@ -66,9 +66,9 @@
 
     <br><br><br><br><br><br>
     <div style="display: inline-block;">
-        <img id="pluscount" src="banana.png" alt="pluscount">
-        <h3>가격 10000원</h3>
-        <button onclick="addwoodstockcount();">버내너 주식 한도 추가</button>
+        <img id="makestick" src="https://th.bing.com/th/id/OIP.YbAkOr8Rycq9Lpgld_i_AQAAAA?rs=1&pid=ImgDetMain" alt="makestick">
+        <h3>필요 물품 : 나무 2개</h3>
+        <button onclick="makestick();">막대기 만들기</button>
     </div>
     <div style="display: inline-block;">
         <img id="pluscount2" src="apple.png" alt="pluscount2">
@@ -80,6 +80,15 @@
         <h3>가격 50000원</h3>
         <button onclick="addwattermellonstockcount();">수봑 주식 한도 추가</button>
     </div>
+
+    <br><br><br>
+    <h3>현재 소유하고 있는 아이템 개수</h3>
+    <br><br>
+    <div style="display: inline-block;">
+        <img id="makestick" src="https://th.bing.com/th/id/OIP.YbAkOr8Rycq9Lpgld_i_AQAAAA?rs=1&pid=ImgDetMain" alt="makestick">
+        <h3 id="stick"></h3>
+    </div>
+    
 
 </body>
 </html>
