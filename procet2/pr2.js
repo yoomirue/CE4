@@ -191,6 +191,7 @@ function souwattermellonstocklive2() {
     
 }
 
+
 function sousoilstocklive() {
     if (soudon < nowsoilstock){
         alert("현재 소유하신 돈이 수봑 주식을 살만큼 충분하지 않습니다!");
