@@ -18,6 +18,7 @@ sousoilstock = 0;
 soilzehan = 100;
 
 stick = 0;
+craft = 0;
 function getrandomnum() {
     let randomnumber = Math.floor(Math.random() * 201) -101;
     return randomnumber;
@@ -239,6 +240,16 @@ function makestick() {
     }
     
 }
+function makecraft() {
+    if (souwoodstock < 4){
+        alert("나무" + (4 - souwoodstock) + "개가 부족합니다!");
+    }
+    else{
+        souwoodstock -= 4;
+        craft += 1;
+    }
+    
+}
 
 function addapplestockcount() {
     if (soudon < 100000){
@@ -264,6 +275,10 @@ function aba() {
     const target = document.querySelector("h3#stick");
     target.innerHTML = "막대기 : " + stick + "개";
 }
+function abb() {
+    const target = document.querySelector("h3#craft");
+    target.innerHTML = "작업대 : " + craft + "개";
+}
 setInterval(() => {aaa(); aab(); aac(); aad();}, 3000);
-setInterval(() => {aba();}, 1)
+setInterval(() => {aba(); abb();}, 1)
 // setInterval(() => {soudonlive();}, 1)
