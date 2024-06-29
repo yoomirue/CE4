@@ -43,12 +43,12 @@
     text-align: center;
 }
 
-#makestick, #makecraft, #pluscount3 {
+#makestick, #makecraft, #makestonepick, #makeplank {
     width: 200px;
     height: 200px;
 }
 
-#makestick2, #makecraft2, #make {
+#makestick2, #makecraft2, #makestonepick2, #makeplank2 {
     width: 100px;
     height: 100px;
 }

@@ -10,11 +10,11 @@
 <body>
     <h1 id="title">주식 시뮬레이터</h1>
     <h1 id="soudon">현재 소유 금액 : 1000원</h1>
-    <br><br><br><br>
+    <br><br><br><br> 
     <h2>오늘의 주식 상품</h2>
     <div style="display: inline-block;">
         <img id="stock1"src="https://mblogthumb-phinf.pstatic.net/MjAyMDA4MTNfMTA2/MDAxNTk3MzA4MDY4MDg5.Yi9wc8Z_VWrjHW5WaYOGsVal9g9-0YuMD5iQeI7pt00g.QZMRCtBxLdav9-Nj4uD5Aqo_MWVvv8Kn41SrRNUg0SAg.PNG.creepersun3695/7.png?type=w800" alt="minecraftsoil">
-        <h3 id="soilboxfont">훍 주식 0%</h3>
+        <h3 id="soilboxfont">흙 주식 0%</h3>
         <h4>기본 가격 : 500원</h4>
         <h3 id="soilboxfont2">현재 가격 : 500원</h3>
         <h4 id="soilstocksou">현재 주식 소유 수 : 0개</h4>
@@ -24,8 +24,8 @@
     </div>
     <div style="display: inline-block;">
         <img id="stock2" src="https://i.namu.wiki/i/mq36amr0icj09qnFHI2SnNbfljSUwna_H36crsvM0kXIqgsxiEoQiiNLmmoDn83IqSfYbXf6bQAHIHF_mObOzw.webp" alt="woodstock">
-        <h3 id="woodboxfont">놔무 주식 : 0%</h3>
-        <h4>기본 가격 : 1000</h4>
+        <h3 id="woodboxfont">나무 주식 : 0%</h3>
+        <h4>기본 가격 : 1000원</h4>
         <h3 id="woodboxfont2">현재 가격 : 1000원</h3>
         <h4 id="woodstocksou">현재 주식 소유 수 : 0개</h4>
         <button onclick="souwoodstocklive();">매수</button>
@@ -34,7 +34,7 @@
     </div>
     <div style="display: inline-block;">
         <img id="stock3" src="https://static.wikia.nocookie.net/minecraft_ko_gamepedia/images/d/d4/Stone.png/revision/latest?cb=20190506032707" alt="stone">
-        <h3 id="stoneboxfont">똘 주식 0%</h3>
+        <h3 id="stoneboxfont">돌 주식 0%</h3>
         <h4>기본 가격 : 2000원</h4>
         <h3 id="stoneboxfont2">현재 가격 : 2000원</h3>
         <h4 id="stonestocksou">현재 주식 소유 수 : 0개</h4>
@@ -66,31 +66,50 @@
 
     <br><br><br><br><br><br>
     <div style="display: inline-block;">
+        <img id="makeplank" src="https://static.wikia.nocookie.net/minecraft_ko_gamepedia/images/c/c1/Oak_Planks.png/revision/latest?cb=20190506132414" alt="makeplank">
+        <h3>필요 물품 : 나무주식 1개</h3>
+        <button onclick="makeplank();">나무 판자 4개 만들기</button>
+    </div>
+    &nbsp;&nbsp;&nbsp;
+    <div style="display: inline-block;">
         <img id="makestick" src="https://th.bing.com/th/id/OIP.YbAkOr8Rycq9Lpgld_i_AQAAAA?rs=1&pid=ImgDetMain" alt="makestick">
         <h3>필요 물품 : 나무 2개</h3>
-        <button onclick="makestick();">막대기 만들기</button>
+        <button onclick="makestick();">막대기 4개 만들기</button>
     </div>
+    &nbsp;&nbsp;&nbsp;
     <div style="display: inline-block;">
         <img id="makecraft" src="https://static.wikia.nocookie.net/minecraft_ko_gamepedia/images/d/d4/Crafting_Table.png/revision/latest?cb=20190527031721" alt="makecraft">
         <h3>필요 물품 : 나무 4개</h3>
         <button onclick="makecraft();">작업대 만들기</button>
     </div>
+    &nbsp;&nbsp;&nbsp;
     <div style="display: inline-block;">
-        <img id="pluscount3" src="wm.png" alt="pluscount3">
-        <h3>가격 50000원</h3>
-        <button onclick="addwattermellonstockcount();">수봑 주식 한도 추가</button>
+        <img id="makestonepick" src="https://kkukowiki.kr/images/c/c3/%EB%8F%8C%EA%B3%A1%EA%B4%AD%EC%9D%B4.png" alt="makestonepick">
+        <h3>필요 물품 : 막대기 2개, 돌 3개, 작업대 1개</h3>
+        <button onclick="makestonepick();">돌 곡괭이 만들기</button>
     </div>
 
     <br><br><br>
     <h3>현재 소유하고 있는 아이템 개수</h3>
     <br><br>
     <div style="display: inline-block;">
+        <img id="makeplank2" src="https://static.wikia.nocookie.net/minecraft_ko_gamepedia/images/c/c1/Oak_Planks.png/revision/latest?cb=20190506132414" alt="makeplank2">
+        <h3 id="plank"></h3>
+    </div>
+    &nbsp;&nbsp;&nbsp;
+    <div style="display: inline-block;">
         <img id="makestick2" src="https://th.bing.com/th/id/OIP.YbAkOr8Rycq9Lpgld_i_AQAAAA?rs=1&pid=ImgDetMain" alt="makestick2">
         <h3 id="stick"></h3>
     </div>
+    &nbsp;&nbsp;&nbsp;
     <div style="display: inline-block;">
         <img id="makecraft2" src="https://static.wikia.nocookie.net/minecraft_ko_gamepedia/images/d/d4/Crafting_Table.png/revision/latest?cb=20190527031721" alt="makecraft2">
         <h3 id="craft"></h3>
+    </div>
+    &nbsp;&nbsp;&nbsp;
+    <div style="display: inline-block;">
+        <img id="makestonepick2" src="https://kkukowiki.kr/images/c/c3/%EB%8F%8C%EA%B3%A1%EA%B4%AD%EC%9D%B4.png" alt="makestonepick2">
+        <h3 id="stonepick"></h3>
     </div>
     
 
