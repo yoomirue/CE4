@@ -1,20 +1,16 @@
 soilstock = 500;
 woodstock = 1000;
 stonestock = 2000;
-wattermellonstock = 2620;
+ironstock = 3000;
 soudon = 1000;  
-
+//https://static.wikia.nocookie.net/minecraft_ko_gamepedia/images/1/19/Iron_Ore_JE6_BE4.png/revision/latest/scale-to-width-down/150?cb=20220918083530 철 광석 새이미지
 souwoodstock = 0;
-
 
 soustonestock = 0;
 
-
-souwattermellonstock =0;
-
+souironstock = 0;
 
 sousoilstock = 0;
-
 
 plank = 0;
 stick = 0;
@@ -62,18 +58,18 @@ function aab() {
 }
 
 function aac() {
-    const target = document.querySelector("h3#wattermellonboxfont");
+    const target = document.querySelector("h3#ironboxfont");
     const value = getrandomnum();
     if (value > 0){
-        document.getElementById('wattermellonboxfont').style.borderColor="red";
+        document.getElementById('ironboxfont').style.borderColor="red";
     }
     else{
-        document.getElementById('wattermellonboxfont').style.borderColor="blue";
+        document.getElementById('ironboxfont').style.borderColor="blue";
     }
-    target.innerHTML = "수박 주식" + " : " + value + "%";
-    const target2 = document.querySelector("h3#wattermellonboxfont2");
-    nowwattermellonstock = Math.floor(wattermellonstock + (wattermellonstock * value / 100));
-    target2.innerHTML = "현재 가격" + " : " + nowwattermellonstock + "원";
+    target.innerHTML = "철 주식" + " : " + value + "%";
+    const target2 = document.querySelector("h3#ironboxfont2");
+    nowironstock = Math.floor(ironstock + (ironstock * value / 100));
+    target2.innerHTML = "현재 가격" + " : " + nowironstock + "원";
 }
 
 function aad() {
@@ -148,33 +144,36 @@ function soustonestocklive2() {
     
 }
 
-function souwattermellonstocklive() {
-    if (soudon < nowwattermellonstock){
-        alert("현재 소유하신 돈이 수봑 주식을 살만큼 충분하지 않습니다!");
+function souironstocklive() {
+    if (soudon < nowironstock && stonepick < 1){
+        alert("현재 소유하신 돈과 돌곡괭이가 철 주식을 살만큼 충분하지 않습니다!");
+    }
+    else if (soudon > nowironstock && stonepick < 1){
+        alert("현재 돌곡괭이가 모자랍니다!")
+    }
+    else if (soudon < nowironstock && stonepick >= 1){
+        alert("현재 돈이 모자랍니다!")
     }
     else{
-        soudon -= nowwattermellonstock;
-        if(souwattermellonstock >= wattermellonzehan){
-            alert("더 이상 살 수 없습니다");
-        }
-        else{
-            souwattermellonstock += 1;
-            const target = document.querySelector("h4#wattermellonstocksou");
-            target.innerHTML = "현재 주식 소유 수" +" : " + souwattermellonstock + "개";
-        }
+        soudon -= nowironstock;
+        stonepick -= 1;
+        souironstock += 1;
+        const target = document.querySelector("h4#ironstocksou");
+        target.innerHTML = "현재 주식 소유 수" +" : " + souironstock + "개";
+    
         soudonlive();
     }
 }
 
-function souwattermellonstocklive2() {
-    if (souwattermellonstock <= 0){
-        alert("가지고 있는 주식이 수봑 주식이 없습니다!");
+function souironstocklive2() {
+    if (souironstock <= 0){
+        alert("가지고 있는 주식이 철 주식이 없습니다!");
     }
     else{
-        soudon += nowwattermellonstock;
-        souwattermellonstock -= 1;
-        const target = document.querySelector("h4#wattermellonstocksou");
-        target.innerHTML = "현재 주식 소유 수" +" : " + souwattermellonstock + "개";
+        soudon += nowironstock;
+        souironstock -= 1;
+        const target = document.querySelector("h4#ironstocksou");
+        target.innerHTML = "현재 주식 소유 수" +" : " + souironstock + "개";
         soudonlive();
     }
     
