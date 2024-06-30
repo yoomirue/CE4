@@ -246,10 +246,10 @@ function makecraft() {
 
 
 function makestonepick() {
-    if (stick < 2 && soustonestock < 3 ){
-        alert("막대기 " + (2 - stick) + "개와 돌 " + (3 - soustonestock) + "개가 부족합니다!");
+    if (stick < 2 && soustonestock < 3 & craft < 1){
+        alert("막대기 " + (2 - stick) + "개와 돌 " + (3 - soustonestock) + "개, 작업대 1개가 부족합니다!");
     }
-    else if (stick < 2 && soustonestock >= 3){
+    else if (stick < 2 && soustonestock >= 3 ){
         alert("막대기 " + (2 - stick) + "개가 부족합니다");
     }
     else if (stick >= 2 && soustonestock < 3){
