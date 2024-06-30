@@ -16,8 +16,9 @@ plank = 0;
 stick = 0;
 craft = 0;
 stonepick = 0;
+buynewironimg =0;
 function getrandomnum() {
-    let randomnumber = Math.floor(Math.random() * 201) -101;
+    let randomnumber = Math.floor(Math.random() * 201) -100;
     return randomnumber;
 }
 
@@ -189,6 +190,7 @@ function sousoilstocklive() {
     
         sousoilstock += 1;
         const target = document.querySelector("h4#soilstocksou");
+        
         target.innerHTML = "현재 주식 소유 수" +" : " + sousoilstock + "개";
     
         soudonlive();
@@ -262,6 +264,32 @@ function makestonepick() {
     
 }
 
+function newironcore() {
+    if (soudon < 100000){
+        alert("돈이 부족합니다!");
+    }
+    if(buynewironimg == 1){
+        alert("이미 구매하셨습니다. 더이상 구매할 수 없습니다.");
+        
+    }
+    else if(soudon > 100000){
+        soudon -= 100000;
+        buynewironimg = 1;
+        alert("구매가 완료 되었습니다");
+        const target = document.querySelector("img#stock4");
+        target.setAttribute("src", "https://static.wikia.nocookie.net/minecraft_gamepedia/images/1/19/Iron_Ore_JE6_BE4.png/revision/latest?cb=20210326000111");
+        const target2 = document.querySelector("img#newironcoreimg");
+        target2.setAttribute("src", "https://img.freepik.com/premium-vector/check-mark-vector-illustration-icon_149152-669.jpg");
+        const target3 = document.querySelector("h3#ironbuyend");
+        target3.innerHTML = "구매 완료"
+        const target4 = document.querySelector("button#ironbuyend2");
+        target4.innerHTML = "구매 완료"
+
+        
+        
+    }
+    soudonlive();
+}
 function aba() {
     const target = document.querySelector("h3#plank");
     target.innerHTML = "나무 판자 : " + plank + "개";
