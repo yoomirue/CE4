@@ -2,8 +2,9 @@ soilstock = 500;
 woodstock = 1000;
 stonestock = 2000;
 ironstock = 3000;
+diamondstock = 10000;
 soudon = 1000;  
-//https://static.wikia.nocookie.net/minecraft_ko_gamepedia/images/1/19/Iron_Ore_JE6_BE4.png/revision/latest/scale-to-width-down/150?cb=20220918083530 철 광석 새이미지
+
 souwoodstock = 0;
 
 soustonestock = 0;
@@ -12,10 +13,14 @@ souironstock = 0;
 
 sousoilstock = 0;
 
+soudiamondstock = 0;
+
 plank = 0;
 stick = 0;
 craft = 0;
 stonepick = 0;
+ironpick = 0;
+diamondpick = 0;
 buynewironimg =0;
 function getrandomnum() {
     let randomnumber = Math.floor(Math.random() * 201) -100;
@@ -87,6 +92,22 @@ function aad() {
     nowsoilstock = Math.floor(soilstock + (soilstock * value / 100));
     target2.innerHTML = "현재 가격" + " : " + nowsoilstock + "원";
 }
+
+function aae() {
+    const target = document.querySelector("h3#diamondboxfont");
+    const value = getrandomnum();
+    if (value > 0){
+        document.getElementById('diamondboxfont').style.borderColor="red";
+    }
+    else{
+        document.getElementById('diamondboxfont').style.borderColor="blue";
+    }
+    target.innerHTML = "다이아몬드 주식" + " : " + value + "%";
+    const target2 = document.querySelector("h3#diamondboxfont2");
+    nowdiamondstock = Math.floor(diamondstock + (diamondstock * value / 100));
+    target2.innerHTML = "현재 가격" + " : " + nowdiamondstock + "원";
+}
+
 
 function souwoodstocklive() {
     if (soudon < nowbananstock){
@@ -211,6 +232,42 @@ function sousoilstocklive2() {
     
 }
 
+function soudiamondstocklive() {
+    if (soudon < nowdiamondstock){
+        alert("현재 소유하신 돈이 다이아몬드 주식을 살만큼 충분하지 않습니다!");
+    }
+    else{
+        if (ironpick >= 1){
+            soudon -= nowdiamondstock;
+            ironpick -= 1;
+            soudiamondstock += 1;
+            const target = document.querySelector("h4#diamondstocksou");
+            target.innerHTML = "현재 주식 소유 수" +" : " + soudiamondstock + "개";
+            soudonlive();
+        }
+        else if(ironpick < 1){
+            alert("철곡괭이가 없습니다!");
+        }
+        
+    }
+}
+
+function soudiamondstocklive2() {
+    if (soudiamondstock <= 0){
+        alert("가지고 있는 주식이 다이아몬드 주식이 없습니다!");
+    }
+    else{
+        soudon += nowdiamondstock;
+        soudiamondstock -= 1;
+        const target = document.querySelector("h4#diamondstocksou");
+        target.innerHTML = "현재 주식 소유 수" +" : " + soudiamondstock + "개";
+        soudonlive();
+    }
+    
+}
+
+
+
 function makeplank() {
     if (souwoodstock < 1){
         alert("나무 1개가 부족합니다!");
@@ -246,23 +303,35 @@ function makecraft() {
 
 
 function makestonepick() {
-    if (stick < 2 && soustonestock < 3 & craft < 1){
-        alert("막대기 " + (2 - stick) + "개와 돌 " + (3 - soustonestock) + "개, 작업대 1개가 부족합니다!");
+    if (soustonestock < 3 && stick < 2 && craft < 1){
+        alert("돌" + (3 - soustonestock) + "개와 막대기 " + (2 - stick) + "개와 작업대 1개가 부족합니다.");
     }
-    else if (stick < 2 && soustonestock >= 3 ){
-        alert("막대기 " + (2 - stick) + "개가 부족합니다");
+    else if (soustonestock < 3 && stick >= 2 && craft >= 1){
+        alert("돌" + (3 - soustonestock) + "개가 부족합니다.");
     }
-    else if (stick >= 2 && soustonestock < 3){
-        alert("돌 " + (3 - soustonestock) + "개가 부족합니다!")
+    else if (soustonestock >= 3 && stick < 2 && craft >= 1){
+        alert("막대기 " + (2 - stick) + "개가 부족합니다.");
     }
-    else{
+    else if ( soustonestock >= 3 && stick >= 2 && craft < 1){
+        alert("작업대 1개가 부족합니다.");
+    }
+    else if (soustonestock < 3 && stick < 2 && craft >= 1){
+        alert("돌 " + (3 - soustonestock) + "개와 막대기 " + (2 - stick) + "개가 부족합니다.");
+    }
+    else if (soustonestock < 3 && stick >= 2 && craft < 1){
+        alert("돌 " + (3 - soustonestock) + "개와 작업대 1개가 부족합니다.");
+    }
+    else if (soustonestock >= 3 && stick < 2 && craft < 1){
+        alert("막대기 " + (2 - stick) + "개와 작업대 1개가 부족합니다")
+    }
+    else if (soustonestock >= 3 && stick >= 2 && craft >= 1){
         stonepick += 1;
-        stick -= 2;
-        soustonestock -= 3;
-        craft -= 1;
+        const target = document.querySelector("h4#stonestocksou");
+        target.innerHTML = "현재 주식 소유 수" +" : " + soustonestock + "개";
     }
-    
 }
+
+
 
 function newironcore() {
     if (soudon < 100000){
@@ -277,9 +346,9 @@ function newironcore() {
         buynewironimg = 1;
         alert("구매가 완료 되었습니다");
         const target = document.querySelector("img#stock4");
-        target.setAttribute("src", "https://static.wikia.nocookie.net/minecraft_gamepedia/images/1/19/Iron_Ore_JE6_BE4.png/revision/latest?cb=20210326000111");
+        target.setAttribute("src", "새철.webp");
         const target2 = document.querySelector("img#newironcoreimg");
-        target2.setAttribute("src", "https://img.freepik.com/premium-vector/check-mark-vector-illustration-icon_149152-669.jpg");
+        target2.setAttribute("src", "확인.avif");
         const target3 = document.querySelector("h3#ironbuyend");
         target3.innerHTML = "구매 완료"
         const target4 = document.querySelector("button#ironbuyend2");
@@ -290,6 +359,65 @@ function newironcore() {
     }
     soudonlive();
 }
+
+function makediamondpick() {
+    if (soudiamondstock < 3 && stick < 2 && craft < 1){
+        alert("다이아몬드 " + (3 - soudiamondstock) + "개와 막대기 " + (2 - stick) + "개와 작업대 1개가 부족합니다.");
+    }
+    else if (soudiamondstock < 3 && stick >= 2 && craft >= 1){
+        alert("다이아몬드 " + (3 - soudiamondstock) + "개가 부족합니다.");
+    }
+    else if (soudiamondstock >= 3 && stick < 2 && craft >= 1){
+        alert("막대기 " + (2 - stick) + "개가 부족합니다.");
+    }
+    else if ( soudiamondstock >= 3 && stick >= 2 && craft < 1){
+        alert("작업대 1개가 부족합니다.");
+    }
+    else if (soudiamondstock < 3 && stick < 2 && craft >= 1){
+        alert("다이아몬드 " + (3 - soudiamondstock) + "개와 막대기 " + (2 - stick) + "개가 부족합니다.");
+    }
+    else if (soudiamondstock < 3 && stick >= 2 && craft < 1){
+        alert("다이아몬드 " + (3 - soudiamondstock) + "개와 작업대 1개가 부족합니다.");
+    }
+    else if (soudiamondstock >= 3 && stick < 2 && craft < 1){
+        alert("막대기 " + (2 - stick) + "개와 작업대 1개가 부족합니다")
+    }
+    else if(soudiamondstock >= 3 && stick >= 2 && craft >= 1){
+        diamondpick += 1;
+        const target = document.querySelector("h4#diamondstocksou");
+        target.innerHTML = "현재 주식 소유 수" +" : " + soudiamondstock + "개";
+    }
+}
+
+function makeironpick() {
+    if (souironstock < 3 && stick < 2 && craft < 1){
+        alert("철 " + (3 - souironstock) + "개와 막대기 " + (2 - stick) + "개와 작업대 1개가 부족합니다.");
+    }
+    else if (souironstock < 3 && stick >= 2 && craft >= 1){
+        alert("철 " + (3 - souironstock) + "개가 부족합니다.");
+    }
+    else if (souironstock >= 3 && stick < 2 && craft >= 1){
+        alert("막대기 " + (2 - stick) + "개가 부족합니다.");
+    }
+    else if ( souironstock >= 3 && stick >= 2 && craft < 1){
+        alert("작업대 1개가 부족합니다.");
+    }
+    else if (souironstock < 3 && stick < 2 && craft >= 1){
+        alert("철 " + (3 - soudiamondstock) + "개와 막대기 " + (2 - stick) + "개가 부족합니다.");
+    }
+    else if (souironstock < 3 && stick >= 2 && craft < 1){
+        alert("철" + (3 - soudiamondstock) + "개와 작업대 1개가 부족합니다.");
+    }
+    else if (souironstock >= 3 && stick < 2 && craft < 1){
+        alert("막대기 " + (2 - stick) + "개와 작업대 1개가 부족합니다")
+    }
+    else if (souironstock >= 3 && stick >= 2 && craft >= 1){
+        ironpick += 1;
+        const target = document.querySelector("h4#ironstocksou");
+        target.innerHTML = "현재 주식 소유 수" +" : " + souironstock + "개";
+    }
+}
+
 function aba() {
     const target = document.querySelector("h3#plank");
     target.innerHTML = "나무 판자 : " + plank + "개";
@@ -306,6 +434,14 @@ function abd() {
     const target = document.querySelector("h3#stonepick");
     target.innerHTML = "돌 곡괭이 : " + stonepick + "개";
 }
-setInterval(() => {aaa(); aab(); aac(); aad();}, 3000);
-setInterval(() => {aba(); abb(); abc(); abd();}, 1)
+function abe() {
+    const target = document.querySelector("h3#ironpick");
+    target.innerHTML = "철 곡괭이 : " + ironpick + "개";
+}
+function abf() {
+    const target = document.querySelector("h3#diamondpick");
+    target.innerHTML = "다이아 곡괭이 : " + diamondpick + "개";
+}
+setInterval(() => {aaa(); aab(); aac(); aad(); aae();}, 3000);
+setInterval(() => {aba(); abb(); abc(); abd(); abe(); abf();}, 1)
 // setInterval(() => {soudonlive();}, 1)

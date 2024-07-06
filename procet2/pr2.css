@@ -37,18 +37,26 @@
     text-align: center;
 }
 
-#rlboxfont {
+#diamondboxfont {
     display: block;
     border: 3px solid black;
     text-align: center;
 }
 
-#makestick, #makecraft, #makestonepick, #makeplank, #newironcoreimg {
+#ironboxfont {
+    display: block;
+    border: 3px solid black;
+    text-align: center;
+}
+
+
+
+#makestick, #makecraft, #makestonepick, #makeplank, #newironcoreimg, #makediamondpick, #makeironpick {
     width: 200px;
     height: 200px;
 }
 
-#makestick2, #makecraft2, #makestonepick2, #makeplank2 {
+#makestick2, #makecraft2, #makestonepick2, #makeplank2, #makediamondpick2, #makeironpick2 {
     width: 100px;
     height: 100px;
 }
