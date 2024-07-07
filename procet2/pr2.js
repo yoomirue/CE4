@@ -52,12 +52,7 @@ function aaa() {
 }
 
 
-if (souobsidianstock >= 10){
-    document.body.innerHTML = '';
-    const congrat = document.createElement("h1");
-    congrat.innerText = "축하합니다" 
-    document.body.appendChild(congrat);
-}
+
 
 
 function aab() {
@@ -568,6 +563,37 @@ function abf() {
     const target = document.querySelector("h3#diamondpick");
     target.innerHTML = "다이아 곡괭이 : " + diamondpick + "개";
 }
-setInterval(() => {aaa(); aab(); aac(); aad(); aae(); aaf();}, 3000);
-setInterval(() => {aba(); abb(); abc(); abd(); abe(); abf();}, 1)
+
+function cleargame(){
+    if (souobsidianstock >= 10){
+        document.body.innerHTML = ' ';
+        const congrat = document.createElement("button");
+        congrat.innerText = "엔딩보기" 
+        congrat.setAttribute("onclick", "ending();");
+        document.body.appendChild(congrat);
+    }
+}
+function ending(){
+    clearInterval(loop2);
+    clearInterval(cleargame);
+    document.body.innerHTML = ' ';
+    const congrat = document.createElement("h1");
+    congrat.innerText = "게임을 깨셨군요 축하합니다"
+    const congrat2 = document.createElement("h2");
+    congrat2.innerText = "플레이타임 : " + (timer / 60) + "분 " + (timer - ((timer/60)*60)) + "초"
+    const congrat3 = document.createElement("h1");
+    congrat3.innerText = "하드모드 하러 가기.."
+
+    document.body.appendChild(congrat);
+    document.body.appendChild(congrat2);
+    document.body.appendChild(congrat3);
+}
+time = 0;
+function timer() {
+    time += 1;
+}
+
+loop1 = setInterval(() => {aaa(); aab(); aac(); aad(); aae(); aaf();}, 3000);
+loop2 = setInterval(() => {timer();}, 1000);
+loop3 = setInterval(() => {aba(); abb(); abc(); abd(); abe(); abf(); cleargame();}, 1)
 // setInterval(() => {soudonlive();}, 1)
