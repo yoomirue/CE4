@@ -8,7 +8,7 @@
     );
 }
 
-#stock1, #stock2, #stock3, #stock4, #stock5 {
+#stock1, #stock2, #stock3, #stock4, #stock5, #stock6 {
     width: 300px;
     height: 300px;
 }
@@ -44,6 +44,12 @@
 }
 
 #ironboxfont {
+    display: block;
+    border: 3px solid black;
+    text-align: center;
+}
+
+#obsidianboxfont {
     display: block;
     border: 3px solid black;
     text-align: center;

@@ -3,6 +3,7 @@ woodstock = 1000;
 stonestock = 2000;
 ironstock = 3000;
 diamondstock = 10000;
+obsidianstock = 1000000;
 soudon = 1000;  
 
 souwoodstock = 0;
@@ -15,13 +16,15 @@ sousoilstock = 0;
 
 soudiamondstock = 0;
 
+souobsidianstock = 0;
+
 plank = 0;
 stick = 0;
 craft = 0;
 stonepick = 0;
 ironpick = 0;
 diamondpick = 0;
-buynewironimg =0;
+buynewironimg = 0;
 function getrandomnum() {
     let randomnumber = Math.floor(Math.random() * 201) -100;
     return randomnumber;
@@ -47,6 +50,15 @@ function aaa() {
     nowbananstock = Math.floor(woodstock + (woodstock * value / 100));
     target2.innerHTML = "현재 가격" + " : " + nowbananstock + "원";
 }
+
+
+if (souobsidianstock >= 10){
+    document.body.innerHTML = '';
+    const congrat = document.createElement("h1");
+    congrat.innerText = "축하합니다" 
+    document.body.appendChild(congrat);
+}
+
 
 function aab() {
     const target = document.querySelector("h3#stoneboxfont");
@@ -108,6 +120,20 @@ function aae() {
     target2.innerHTML = "현재 가격" + " : " + nowdiamondstock + "원";
 }
 
+function aaf() {
+    const target = document.querySelector("h3#obsidianboxfont");
+    const value = getrandomnum();
+    if (value > 0){
+        document.getElementById('obsidianboxfont').style.borderColor="red";
+    }
+    else{
+        document.getElementById('obsidianboxfont').style.borderColor="blue";
+    }
+    target.innerHTML = "흑요석 주식" + " : " + value + "%";
+    const target2 = document.querySelector("h3#obsidianboxfont2");
+    nowobsidianstock = Math.floor(obsidianstock + (obsidianstock * value / 100));
+    target2.innerHTML = "현재 가격" + " : " + nowobsidianstock + "원";
+}
 
 function souwoodstocklive() {
     if (soudon < nowbananstock){
@@ -176,28 +202,65 @@ function souironstocklive() {
     else if (soudon < nowironstock && stonepick >= 1){
         alert("현재 돈이 모자랍니다!")
     }
-    else{
+    
+    else if (soudon > nowironstock && diamondpick >= 1 && ironpick >= 1 && stonepick >= 1){
+        stonepick -= 1;
         soudon -= nowironstock;
-        if (diamondpick >= 1 && ironpick < 1 && stonepick < 1){
-            diamondpick -= 1;
-            alert("돌 곡괭이와 철 곡괭이가 없어 다이아 곡괭이로 대체 하여 구매했습니다.")
-        }
-        else if (diamondpick < 1 && ironpick >= 1 && stonepick < 1){
-            ironpick -= 1;
-            alert("돌곡괭이와 다이아 곡괭이가 없어 철곡괭이로 대체 하여 구매했습니다.")
-        }
-        else if (diamondpick < 1 && ironpick < 1 && stonepick >= 1){
-            stonepick -= 1;
-        }
-
-        
         souironstock += 1;
         const target = document.querySelector("h4#ironstocksou");
         target.innerHTML = "현재 주식 소유 수" +" : " + souironstock + "개";
-    
         soudonlive();
     }
-}
+
+    else if (soudon > nowironstock && diamondpick >= 1 && ironpick >= 1 && stonepick < 1){
+        ironpick -= 1;
+        soudon -= nowironstock;
+        souironstock += 1;
+        const target = document.querySelector("h4#ironstocksou");
+        target.innerHTML = "현재 주식 소유 수" +" : " + souironstock + "개";
+        soudonlive();
+    }
+
+    else if (soudon > nowironstock && diamondpick >= 1 && ironpick < 1 && stonepick >= 1){
+        stonepick -= 1;
+        soudon -= nowironstock;
+        souironstock += 1;
+        const target = document.querySelector("h4#ironstocksou");
+        target.innerHTML = "현재 주식 소유 수" +" : " + souironstock + "개";
+        soudonlive();
+    }
+        
+    else if (soudon > nowironstock && diamondpick >= 1 && ironpick < 1 && stonepick < 1){
+            diamondpick -= 1;
+            soudon -= nowironstock;
+            souironstock += 1;
+            const target = document.querySelector("h4#ironstocksou");
+            target.innerHTML = "현재 주식 소유 수" +" : " + souironstock + "개";
+            
+            soudonlive();
+        }
+
+    else if (soudon > nowironstock && diamondpick < 1 && ironpick >= 1 && stonepick < 1){
+            ironpick -= 1;
+            souironstock += 1;
+            const target = document.querySelector("h4#ironstocksou");
+            target.innerHTML = "현재 주식 소유 수" +" : " + souironstock + "개";
+            soudonlive();
+        }
+
+    else if (soudon > nowironstock && diamondpick < 1 && ironpick < 1 && stonepick >= 1){
+            stonepick -= 1;
+            souironstock += 1;
+            const target = document.querySelector("h4#ironstocksou");
+            target.innerHTML = "현재 주식 소유 수" +" : " + souironstock + "개";
+            soudonlive();
+        }
+
+        
+        
+        soudonlive();
+    }
+
 
 function souironstocklive2() {
     if (souironstock <= 0){
@@ -244,6 +307,41 @@ function sousoilstocklive2() {
     
 }
 
+function souobsidianstocklive() {
+    if (soudon < nowobsidianstock){
+        alert("현재 소유하신 돈이 흑요석 주식을 살만큼 충분하지 않습니다!");
+    }
+    else if (soudon > nowobsidianstock && diamondpick >= 1){
+        soudon -= nowobsidianstock;
+        souobsidianstock += 1;
+        const target = document.querySelector("h4#obsidianstocksou");
+        target.innerHTML = "현재 주식 소유 수" +" : " + souobsidianstock + "개";
+        soudonlive();
+    }
+    else if (soudon > nowobsidianstock && diamondpick < 1){
+        soudon -= nowobsidianstock;
+        souobsidianstock += 1;
+        const target = document.querySelector("h4#obsidianstocksou");
+        alert("다이아몬드 곡괭이가 없습니다!");
+        target.innerHTML = "현재 주식 소유 수" +" : " + souobsidianstock + "개";
+        soudonlive();
+    }
+}
+
+function souobsidianstocklive2() {
+    if (souobsidianstock <= 0){
+        alert("가지고 있는 주식이 훍 주식이 없습니다!");
+    }
+    else{
+        soudon += nowobsidianstock;
+        souobsidianstock -= 1;
+        const target = document.querySelector("h4#obsidianstocksou");
+        target.innerHTML = "현재 주식 소유 수" +" : " + souobsidianstock + "개";
+        soudonlive();
+    }
+    
+}
+
 function soudiamondstocklive() {
     if (soudon < nowdiamondstock && ironpick < 1){
         alert("현재 소유하신 돈과 철곡괭이가 철 주식을 살만큼 충분하지 않습니다!");
@@ -254,13 +352,28 @@ function soudiamondstocklive() {
     else if (soudon < nowdiamondstock && ironpick >= 1){
         alert("현재 돈이 모자랍니다!")
     }
-    else{
+    else if (soudon > nowdiamondstock && diamondpick < 1 && ironpick >= 1){
         soudon -= nowdiamondstock;
         ironpick -= 1;
         soudiamondstock += 1;
         const target = document.querySelector("h4#diamondstocksou");
         target.innerHTML = "현재 주식 소유 수" +" : " + soudiamondstock + "개";
-    
+        soudonlive();
+    }
+    else if (soudon > nowdiamondstock && diamondpick >= 1 && ironpick >= 1){
+        soudon -= nowdiamondstock;
+        ironpick -= 1;
+        soudiamondstock += 1;
+        const target = document.querySelector("h4#diamondstocksou");
+        target.innerHTML = "현재 주식 소유 수" +" : " + soudiamondstock + "개";
+        soudonlive();
+    }
+    else if (soudon > nowdiamondstock && diamondpick >= 1 && ironpick < 1){
+        soudon -= nowdiamondstock;
+        daimondpick -= 1;
+        soudiamondstock += 1;
+        const target = document.querySelector("h4#diamondstocksou");
+        target.innerHTML = "현재 주식 소유 수" +" : " + soudiamondstock + "개";
         soudonlive();
     }
 }
@@ -455,6 +568,6 @@ function abf() {
     const target = document.querySelector("h3#diamondpick");
     target.innerHTML = "다이아 곡괭이 : " + diamondpick + "개";
 }
-setInterval(() => {aaa(); aab(); aac(); aad(); aae();}, 3000);
+setInterval(() => {aaa(); aab(); aac(); aad(); aae(); aaf();}, 3000);
 setInterval(() => {aba(); abb(); abc(); abd(); abe(); abf();}, 1)
 // setInterval(() => {soudonlive();}, 1)
