@@ -178,7 +178,19 @@ function souironstocklive() {
     }
     else{
         soudon -= nowironstock;
-        stonepick -= 1;
+        if (diamondpick >= 1 && ironpick < 1 && stonepick < 1){
+            diamondpick -= 1;
+            alert("돌 곡괭이와 철 곡괭이가 없어 다이아 곡괭이로 대체 하여 구매했습니다.")
+        }
+        else if (diamondpick < 1 && ironpick >= 1 && stonepick < 1){
+            ironpick -= 1;
+            alert("돌곡괭이와 다이아 곡괭이가 없어 철곡괭이로 대체 하여 구매했습니다.")
+        }
+        else if (diamondpick < 1 && ironpick < 1 && stonepick >= 1){
+            stonepick -= 1;
+        }
+
+        
         souironstock += 1;
         const target = document.querySelector("h4#ironstocksou");
         target.innerHTML = "현재 주식 소유 수" +" : " + souironstock + "개";
@@ -233,22 +245,23 @@ function sousoilstocklive2() {
 }
 
 function soudiamondstocklive() {
-    if (soudon < nowdiamondstock){
-        alert("현재 소유하신 돈이 다이아몬드 주식을 살만큼 충분하지 않습니다!");
+    if (soudon < nowdiamondstock && ironpick < 1){
+        alert("현재 소유하신 돈과 철곡괭이가 철 주식을 살만큼 충분하지 않습니다!");
+    }
+    else if (soudon > nowdiamondstock && ironpick < 1){
+        alert("현재 철곡괭이가 모자랍니다!")
+    }
+    else if (soudon < nowdiamondstock && ironpick >= 1){
+        alert("현재 돈이 모자랍니다!")
     }
     else{
-        if (ironpick >= 1){
-            soudon -= nowdiamondstock;
-            ironpick -= 1;
-            soudiamondstock += 1;
-            const target = document.querySelector("h4#diamondstocksou");
-            target.innerHTML = "현재 주식 소유 수" +" : " + soudiamondstock + "개";
-            soudonlive();
-        }
-        else if(ironpick < 1){
-            alert("철곡괭이가 없습니다!");
-        }
-        
+        soudon -= nowdiamondstock;
+        ironpick -= 1;
+        soudiamondstock += 1;
+        const target = document.querySelector("h4#diamondstocksou");
+        target.innerHTML = "현재 주식 소유 수" +" : " + soudiamondstock + "개";
+    
+        soudonlive();
     }
 }
 
@@ -325,7 +338,7 @@ function makestonepick() {
         alert("막대기 " + (2 - stick) + "개와 작업대 1개가 부족합니다")
     }
     else if (soustonestock >= 3 && stick >= 2 && craft >= 1){
-        stonepick += 1;
+        stonepick += 10;
         const target = document.querySelector("h4#stonestocksou");
         target.innerHTML = "현재 주식 소유 수" +" : " + soustonestock + "개";
     }
@@ -383,7 +396,7 @@ function makediamondpick() {
         alert("막대기 " + (2 - stick) + "개와 작업대 1개가 부족합니다")
     }
     else if(soudiamondstock >= 3 && stick >= 2 && craft >= 1){
-        diamondpick += 1;
+        diamondpick += 1000;
         const target = document.querySelector("h4#diamondstocksou");
         target.innerHTML = "현재 주식 소유 수" +" : " + soudiamondstock + "개";
     }
@@ -412,7 +425,7 @@ function makeironpick() {
         alert("막대기 " + (2 - stick) + "개와 작업대 1개가 부족합니다")
     }
     else if (souironstock >= 3 && stick >= 2 && craft >= 1){
-        ironpick += 1;
+        ironpick += 100;
         const target = document.querySelector("h4#ironstocksou");
         target.innerHTML = "현재 주식 소유 수" +" : " + souironstock + "개";
     }
