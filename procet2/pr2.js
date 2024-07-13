@@ -580,7 +580,7 @@ function ending(){
     const congrat = document.createElement("h1");
     congrat.innerText = "게임을 깨셨군요 축하합니다"
     const congrat2 = document.createElement("h2");
-    congrat2.innerText = "플레이타임 : " + (timer / 60) + "분 " + (timer - ((timer/60)*60)) + "초"
+    congrat2.innerText = "플레이타임 : " + (time / 60) + "분 " + (time - ((time/60)*60)) + "초"
     const congrat3 = document.createElement("h1");
     congrat3.innerText = "하드모드 하러 가기.."
 
