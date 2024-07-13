@@ -1,0 +1,68 @@
+#title {
+    display: block;
+    text-align: center;
+    background: linear-gradient(
+        to right,
+        red,
+        blue
+    );
+}
+
+#stock1, #stock2, #stock3, #stock4, #stock5, #stock6 {
+    width: 300px;
+    height: 300px;
+}
+
+#woodboxfont {
+    display: block;
+    border: 3px solid black;
+    text-align: center;
+}
+
+#stoneboxfont {
+    display: block;
+    border: 3px solid black;
+    text-align: center;
+}
+
+#ironboxfont {
+    display: block;
+    border: 3px solid black;
+    text-align: center;
+}
+
+#soilboxfont {
+    display: block;
+    border: 3px solid black;
+    text-align: center;
+}
+
+#diamondboxfont {
+    display: block;
+    border: 3px solid black;
+    text-align: center;
+}
+
+#ironboxfont {
+    display: block;
+    border: 3px solid black;
+    text-align: center;
+}
+
+#obsidianboxfont {
+    display: block;
+    border: 3px solid black;
+    text-align: center;
+}
+
+
+
+#makestick, #makecraft, #makestonepick, #makeplank, #newironcoreimg, #makediamondpick, #makeironpick {
+    width: 200px;
+    height: 200px;
+}
+
+#makestick2, #makecraft2, #makestonepick2, #makeplank2, #makediamondpick2, #makeironpick2 {
+    width: 100px;
+    height: 100px;
+}
