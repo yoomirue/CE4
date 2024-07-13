@@ -446,6 +446,9 @@ function makestonepick() {
         alert("막대기 " + (2 - stick) + "개와 작업대 1개가 부족합니다")
     }
     else if (soustonestock >= 3 && stick >= 2 && craft >= 1){
+        soustonestock -= 3;
+        stick -= 2;
+        craft -= 1;
         stonepick += 10;
         const target = document.querySelector("h4#stonestocksou");
         target.innerHTML = "현재 주식 소유 수" +" : " + soustonestock + "개";
@@ -504,6 +507,10 @@ function makediamondpick() {
         alert("막대기 " + (2 - stick) + "개와 작업대 1개가 부족합니다")
     }
     else if(soudiamondstock >= 3 && stick >= 2 && craft >= 1){
+        soudiamondstock -= 3;
+        stick -=2;
+        craft -=1;
+
         diamondpick += 1000;
         const target = document.querySelector("h4#diamondstocksou");
         target.innerHTML = "현재 주식 소유 수" +" : " + soudiamondstock + "개";
@@ -533,6 +540,9 @@ function makeironpick() {
         alert("막대기 " + (2 - stick) + "개와 작업대 1개가 부족합니다")
     }
     else if (souironstock >= 3 && stick >= 2 && craft >= 1){
+        souironstock -= 3;
+        stick -= 2;
+        craft -= 1;
         ironpick += 100;
         const target = document.querySelector("h4#ironstocksou");
         target.innerHTML = "현재 주식 소유 수" +" : " + souironstock + "개";
@@ -582,7 +592,7 @@ function ending(){
     const congrat2 = document.createElement("h2");
     congrat2.innerText = "플레이타임 : " + (time / 60) + "분 " + (time - ((time/60)*60)) + "초"
     const congrat3 = document.createElement("h1");
-    congrat3.innerText = "하드모드 하러 가기.."
+    congrat3.innerText = "하드모드 하러 가기.. https://ce4ec.github.io/CE4/procet2hard/pr2hard.html"
 
     document.body.appendChild(congrat);
     document.body.appendChild(congrat2);
