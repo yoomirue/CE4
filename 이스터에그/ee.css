@@ -1,0 +1,40 @@
+#title {
+    display: block;
+    text-align: center;
+    background: linear-gradient(
+        to right,
+        red,
+        blue
+    );
+}
+
+#es1, #es2, #es3, #es4, #es5 {
+    height: 300px;
+    width: 300px;
+}
+
+#es1t, #title, #es1 {
+    display: block;
+    border: 3px solid black;
+    text-align: center;
+}
+
+#es3t, #es3, #es4, #es4t,#es2t, #es2, #es5t, #es5 {
+    display: block;
+    border: 3px solid black;
+    text-align: center;
+}
+
+#es1t1, #es2t1, #es3t1, #es4t1{
+    display: block;
+    background-color: greenyellow;
+    border: 3px solid black;
+    text-align: center;
+}
+
+#es5t1{
+    display: block;
+    background-color: gray;
+    border: 3px solid black;
+    text-align: center;
+}
