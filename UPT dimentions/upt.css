@@ -1,0 +1,12 @@
+#Title1 {
+    display: block;
+    text-align: center;
+    color: gray;
+}
+
+
+body {
+    background-color: black;
+    margin: 0;
+    height: 100vh;
+  }
