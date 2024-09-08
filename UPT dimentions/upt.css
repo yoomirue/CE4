@@ -16,6 +16,12 @@
     color: gray;
 }
 
+#upt2cw, #upt2cw2, #upt2cw3 {
+    display: block;
+    text-align: center;
+    color: gray;
+}
+
 
 body {
     background-color: black;
@@ -29,4 +35,13 @@ body {
     display: block;
     text-align: center;
     color: greenyellow;
+}
+
+#plus01, #plus02 {
+    height: 70px;
+    width: 70px;
+}
+
+#plus1, #plus2 {
+    color: gray;
 }
