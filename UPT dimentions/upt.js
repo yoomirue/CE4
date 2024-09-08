@@ -20,7 +20,15 @@ function UPT3() {
 }
 
 function UPT4() {
-  
+  if (UPT >= fc){
+    const a = document.querySelector("img#upt10");
+    a.setAttribute("src", "upt.webp");
+
+  }
+  else if (UPT < fc){
+    const a = document.querySelector("img#upt10");
+    a.setAttribute("src", "glerm.webp");
+  }
 }
 
 function upt1cw() {
